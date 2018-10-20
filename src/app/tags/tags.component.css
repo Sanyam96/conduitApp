@@ -2,13 +2,15 @@
     margin-top: 35px;
     padding-top: 0px;
 }
- .main {
+
+.main {
     display: inline;
     border-radius: 32px;
 }
- .mybtn {
+
+.mybtn {
     border-radius: 20px;
     background-color: #818a91;
     color:white;
     margin:3px;
-} 
+}
