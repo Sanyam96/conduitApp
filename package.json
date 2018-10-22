@@ -1,6 +1,6 @@
 {
-  "name": "conduictapp",
-  "version": "0.0.1",
+  "name": "conduict",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
