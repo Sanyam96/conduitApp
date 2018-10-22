@@ -8,12 +8,14 @@ import { ArticleService } from '../article.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private articleService : ArticleService) { }
+  constructor(private articleService: ArticleService) { 
+    
+  }
 
   ngOnInit() {
-    if(localStorage.getItem('token')!=null){
+    if (localStorage.getItem('token') != null) {
       this.articleService.setUserFeed()
-    }else{
+    } else {
       this.articleService.setGlobalFeed()
     }
   }

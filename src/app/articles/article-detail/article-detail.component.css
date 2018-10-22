@@ -1,3 +1,20 @@
+h5{
+    display: inline;
+}
+
+img {
+    display: inline;
+}
+
+.comments {
+    padding-top: 100px;
+    max-width: 500px;
+}
+
+.showBlack {
+    color : black;
+}
+
 .head {
     background-color: #373a3c;
     height: 170px;
@@ -8,14 +25,19 @@
     color : white; 
 }
 
-h4{
-    color:white;
-}
-
-.comments {
-    padding-top: 100px;
+.comment {
+    width: 35rem;
+    margin-left:30.5%;
 }
 
 .crudBtn {
     display: inline;
+}
+
+.articleBody {
+    padding-top: 30px;
+}
+
+.showWhite {
+    color: white;
 }

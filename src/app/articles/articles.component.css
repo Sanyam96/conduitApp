@@ -1,16 +1,22 @@
 .tag {
-    /* float: left; */
-    /* display: block; */
     color: #aaa;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    /* border-bottom: 3px solid transparent; */
 }
 
 a {
     cursor: pointer;
+}
+
+.main {
+    margin-top: 10px;
+    /* padding-bottom:0px; */
+}
+
+a.active:hover {
+    color: #5cb85c;
 }
 
 a:hover { 
@@ -20,15 +26,6 @@ a:hover {
 a.active {
     border-bottom: 2px solid #5cb85c;
     color : #5cb85c;
-}
-
-a.active:hover {
-    color: #5cb85c;
-}
-
-.main {
-    margin-top: 10px;
-    /* padding-bottom:0px; */
 }
 
 hr {

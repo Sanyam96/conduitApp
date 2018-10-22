@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '../../../node_modules/@angular/router';
   templateUrl: './new-articles.component.html',
   styleUrls: ['./new-articles.component.css']
 })
+
 export class NewArticlesComponent implements OnInit {
 
   articleForm: FormGroup
@@ -32,10 +33,12 @@ export class NewArticlesComponent implements OnInit {
         if (this.slug != null) {
           this.articleService.getArticleDetails(this.slug).subscribe((data: any) => {
             this.articleData = data.article;
-            this.articleForm.setValue({title: this.articleData.title, 
-                                       description: this.articleData.description,
-                                       body: this.articleData.body,
-                                       tagList: this.articleData.tagList})
+            this.articleForm.setValue({
+              title: this.articleData.title,
+              description: this.articleData.description,
+              body: this.articleData.body,
+              tagList: this.articleData.tagList
+            })
           })
         }
       }
@@ -43,17 +46,17 @@ export class NewArticlesComponent implements OnInit {
   }
 
   postArticle() {
-    if (this.slug == null) { 
-      this.articleService.createArticle(this.articleForm.value).subscribe((response:{article:any}) => {
+    if (this.slug == null) {
+      this.articleService.createArticle(this.articleForm.value).subscribe((response: { article: any }) => {
         console.log(response);
         this.router.navigate([`/profile/${response.article.author.username}`])
       });
     } else {
-      this.articleService.updateArticle(this.articleForm.value, this.slug).subscribe((response:{article:any}) => {
+      this.articleService.updateArticle(this.articleForm.value, this.slug).subscribe((response: { article: any }) => {
         console.log(response);
         this.router.navigate([`/profile/${response.article.author.username}`])
       })
     }
-    
+
   }
 }

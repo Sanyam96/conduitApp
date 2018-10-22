@@ -1,10 +1,10 @@
 <div class="jumbotron jumbotron-fluid jumbo">
-    <div class="container">
-      <h6>Popular Tags</h6>
-      <div class="btn-group-toggle main" data-toggle="buttons" *ngFor="let tag of tags">
-          <label class="btn btn-sm btc active mybtn">
-            <input type="checkbox" checked autocomplete="off" (click)="onTagSelection(tag)"> {{ tag }}
-          </label>
-      </div>
+  <div class="container">
+    <h6>Popular Tags</h6>
+    <div class="btn-group-toggle main" data-toggle="buttons" *ngFor="let tag of tags">
+      <label class="btn btn-sm btc active mybtn">
+        <input type="checkbox" checked autocomplete="off" (click)="onTagSelection(tag)"> {{ tag }}
+      </label>
     </div>
+  </div>
 </div>

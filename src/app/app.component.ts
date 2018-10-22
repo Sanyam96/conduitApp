@@ -11,8 +11,7 @@ import { UserService } from './user.service';
 export class AppComponent implements OnInit {
   title = 'conduict';
 
-  constructor(private articleService: ArticleService,private tagService: TagsService,
-              private userSerive: UserService) {
+  constructor(private articleService: ArticleService,private tagService: TagsService, private userSerive: UserService) {
 
   }
 

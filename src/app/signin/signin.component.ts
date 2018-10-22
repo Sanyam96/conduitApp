@@ -11,31 +11,31 @@ import { Router } from '@angular/router';
 })
 export class SigninComponent implements OnInit {
 
-  password : string
-  email : string
-  signinForm : FormGroup
+  password: string
+  email: string
+  signinForm: FormGroup
   authToken: string
   constructor(private formBuilder: FormBuilder, private userService: UserService,
-              private router: Router) {
+    private router: Router) {
     this.signinForm = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, Validators.email])],
       password: ['', Validators.compose([Validators.required])]
     });
-   }
+  }
 
   ngOnInit() {
   }
 
   loginUser() {
-    if(this.signinForm.valid) {
+    if (this.signinForm.valid) {
       console.log(this.signinForm.value);
       let userObject = {
         user: this.signinForm.value
       }
-      this.userService.loginUser(userObject).subscribe((response : {user : User}) => {
-        localStorage.setItem("token",response.user.token);
+      this.userService.loginUser(userObject).subscribe((response: { user: User }) => {
+        localStorage.setItem("token", response.user.token);
         this.userService.setUsername(response.user.username)
-        console.log("Token: "+response.user.token);
+        console.log("Token: " + response.user.token);
         this.router.navigate(['/'])
       })
     }

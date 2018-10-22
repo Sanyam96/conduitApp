@@ -8,22 +8,23 @@ import { ArticleService } from '../article.service';
   styleUrls: ['./tags.component.css']
 })
 export class TagsComponent implements OnInit {
-  tags : any
+  tags: any
   @Output() isTagSelected = new EventEmitter<string>();
-  constructor(private articleService: ArticleService , private tagService: TagsService) { }
+  constructor(private articleService: ArticleService, private tagService: TagsService) { }
 
   ngOnInit() {
-    this.tagService.getGlobalTags().subscribe((data : {tags:string}) => {
-      this.tags=data.tags
+    this.tagService.getGlobalTags().subscribe((data: { tags: string }) => {
+      this.tags = data.tags
     });
   }
 
-  tagSelected(tag){
+  tagSelected(tag) {
     this.isTagSelected.emit(tag)
   }
 
   onTagSelection(value) {
     this.tagService.setTagName(value)
     this.articleService.getFeedByTag(value)
+    this.articleService.setCurrentFeedName("tag")
   }
 }

@@ -1,9 +1,8 @@
-ul {
-    list-style-type: none;
-}
-
 .blocks {
     height: 400px;
     background-color: bisque;
 }
 
+ul {
+    list-style-type: none;
+}

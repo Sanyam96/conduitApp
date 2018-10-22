@@ -2,8 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { NavComponent } from './header/nav/nav.component';
-import { HeaderComponent } from './header/header.component';
+import { NavComponent } from './nav/nav.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleListComponent } from './articles/article-list/article-list.component';
 import { ArticleItemComponent } from './articles/article-list/article-item/article-item.component';
@@ -18,6 +17,7 @@ import { NewArticlesComponent } from './new-articles/new-articles.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HelperComponent } from './profile/helper/helper.component';
 import { PaginationModule } from 'ngx-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 const routes : Routes = [
   {path : '', component: HomeComponent},
@@ -33,7 +33,7 @@ const routes : Routes = [
   declarations: [
     AppComponent,
     NavComponent,
-    HeaderComponent,
+    NavComponent,
     ArticlesComponent,
     ArticleListComponent,
     ArticleItemComponent,
@@ -50,6 +50,7 @@ const routes : Routes = [
     HttpClientModule,
     BrowserModule,
     ReactiveFormsModule,
+    FormsModule,
     PaginationModule.forRoot(),
     RouterModule.forRoot(routes)
   ],

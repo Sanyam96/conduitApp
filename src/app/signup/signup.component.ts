@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 
 @Component({
@@ -8,23 +8,23 @@ import { UserService } from '../user.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  username : string
-  password : string
-  email : string
-  signupForm : FormGroup 
+  username: string
+  password: string
+  email: string
+  signupForm: FormGroup
   constructor(private formBuilder: FormBuilder, private userService: UserService) {
     this.signupForm = this.formBuilder.group({
       username: ['', Validators.compose([Validators.required])],
       email: ['', Validators.compose([Validators.required, Validators.email])],
       password: ['', Validators.compose([Validators.required])]
     });
-   }
+  }
 
   ngOnInit() {
   }
 
   registerUser() {
-    if(this.signupForm.valid) {
+    if (this.signupForm.valid) {
       console.log(this.signupForm.value);
       let userObject = {
         user: this.signupForm.value

@@ -1,7 +1,8 @@
 <div *ngIf="parent==='home'" class="main">
-  <a class="tag" [ngClass]="{'active':classIndex==1 && !tagName}" (click)="getFeed('user')" *ngIf="localStorageObj.getItem('token')">Your Feed</a>
-  <a class="tag" [ngClass]="{'active':(classIndex==1 && !tagName && !localStorageObj.getItem('token'))
-                                      ||(classIndex==2 && !tagName && localStorageObj)}" (click)="getFeed('global')">Global Feed</a>
+  <a class="tag" [ngClass]="{'active':classIndex==1 && !tagName}" (click)="getFeed('user')" *ngIf="localStorageObj.getItem('token')">Your
+    Feed</a>
+  <a class="tag" [ngClass]="{'active':(classIndex==1 && !tagName && !localStorageObj.getItem('token')) ||(classIndex==2 && !tagName && localStorageObj)}"
+    (click)="getFeed('global')">Global Feed</a>
   <a class="tag active" *ngIf="tagName">#{{ tagName }}</a>
 </div>
 <div *ngIf="parent==='profile'" class="main">
@@ -9,4 +10,8 @@
   <a class="tag" [ngClass]="{'active':classIndex==3 && !tagName}" (click)="getFeed('favourite')">Favourite</a>
 </div>
 <hr>
-<app-article-list (totalArticleEvent)="getFeed(currentFeedName,$event)"></app-article-list>
+<app-article-list></app-article-list>
+
+<pagination class="blocks" [boundaryLinks]="true" [totalItems]="totalArticle" (pageChanged)="pageChanged($event)"
+  previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;" [maxSize]="5">
+</pagination>

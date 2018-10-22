@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { HttpHeaders } from '@angular/common/http';
-import { User } from './shared/signinDataType';
 import { Subject } from '../../node_modules/rxjs';
 
 @Injectable({
@@ -17,31 +16,31 @@ export class UserService {
   registerUser(user: any) {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json'
+        'Content-Type': 'application/json'
       })
     };
-    return this.http.post(this.url,user,httpOptions)
+    return this.http.post(this.url, user, httpOptions)
   }
 
   loginUser(user: any) {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json'
+        'Content-Type': 'application/json'
       })
     };
-    return this.http.post(this.url+"/login",user,httpOptions)
+    return this.http.post(this.url + "/login", user, httpOptions)
   }
 
   setUsername(username: string) {
     this.currentUsername.next(username)
   }
 
-  getCurrentUser(){
+  getCurrentUser() {
     const httpOptions = {
       headers: new HttpHeaders({
-        'authorization': 'Token '+ localStorage.getItem('token')
+        'authorization': 'Token ' + localStorage.getItem('token')
       })
     };
-    return this.http.get(this.currentUserUrl,httpOptions);
+    return this.http.get(this.currentUserUrl, httpOptions);
   }
 }

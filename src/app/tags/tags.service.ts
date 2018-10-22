@@ -11,16 +11,16 @@ export class TagsService {
   tagName = new Subject<any>()
   constructor(private http: HttpClient) { }
 
-  getGlobalTags(){
-    return this.http.get(this.url);
+  getTagName() {
+    return this.tagName
   }
 
   setTagName(name) {
     this.tagName.next(name)
   }
 
-  getTagName() {
-    return this.tagName
+  getGlobalTags(){
+    return this.http.get(this.url);
   }
-
+  
 }
